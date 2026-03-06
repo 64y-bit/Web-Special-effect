@@ -1,0 +1,50 @@
+/* 大概的雪花形状：简单圆形,半透明,静止 */
+/*模拟冬天背景色和天空*/
+/*想要更多雪花->随机分布*/
+body{
+    background-color:rgb(137, 152, 171);/*背景色可以根据需要调整*/
+    margin:0;
+    height:100vh;
+    overflow:hidden;
+    /*display:flex;/*启用flexbox布局*/
+    /*justify-content:center;/*水平对齐方式*/
+   /* align-items:center;/*垂直对齐方式*/
+
+
+
+}
+p{
+   position:relative;
+   top:50vh;
+   bottom:50vh;
+    font-size: 20px;
+    font-weight:bold;
+    font-family: 'Arial Rounded MT Bold', 'Hiragino Maru Gothic', '圆体', sans-serif;;
+    margin-bottom: 1.5rem;
+    text-shadow:rgb(210, 219, 233);
+    color:white;
+    text-align: center;
+}
+.snowflake{
+    position: absolute;
+    top:-50px;
+    margin: 15px;
+    color:white;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    pointer-events: none;/*让雪花不干扰鼠标事件*/
+    animation: sway 3s  infinite;/*添加动画效果*/
+    z-index: 1000;/*确保在最上层*/
+}
+@keyframes sway{
+    0%,100%{
+        transform : translateY(0);/*旋转角度*/
+        
+    }
+    
+    50%{
+       transform : translateY(20px) rotate(0.5turn);
+       
+    }
+   
+}
+
